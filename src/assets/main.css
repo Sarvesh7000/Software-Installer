@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+body{
+  overflow: hidden;
+}
+
+.main-container {
+  height: calc(100vh - 15vh);
+  overflow-y: auto;
+  
+}
