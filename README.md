@@ -1,46 +1,35 @@
-# Vue-enterprise-dashboard
-An interactive and user-friendly dashboard application built with Vue.js and Tailwind CSS, featuring comprehensive reporting capabilities and dynamic data visualization.
+# installer-dashboard
 
-Project Overview
+This template should help get you started developing with Vue 3 in Vite.
 
-Sophisticated Software Dashboard
-This project is a sophisticated and user-friendly dashboard application developed using Vue.js and Tailwind CSS. It provides comprehensive reporting capabilities and dynamic data visualization, making it easy for users to interact with and analyze data effectively.
+## Recommended IDE Setup
 
-Features
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-1.Login Page: Secure authentication with smooth transitions and professional design.
-2.Dashboard: A well-organized interface that offers quick navigation to various reports and data summaries.
-3.Report Page: Detailed reports with expandable entries for in-depth data examination.
-4.Dynamic Data Visualization: Interactive charts and graphs that present data in an easy-to-understand format.
+## Customize configuration
 
-Technology Stack
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-1.Frontend: Vue.js
-2.Styling: Tailwind CSS
-3.State Management: Vuex (if applicable)
-4.Routing: Vue Router
+## Project Setup
 
-Installation and Setup
-
-1. Clone the repository:
-git clone https://github.com/Sarvesh7000/Vue-enterprise-dashboard.git
-
-2.Navigate to the project directory:
-cd Vue-enterprise-dashboard
-
-3.Install dependencies:
+```sh
 npm install
+```
 
-4.Run the development server:
-npm run serve
+### Compile and Hot-Reload for Development
 
-Usage:
-After setting up the project, open your browser and navigate to http://localhost:8080 to view the application. Use the login credentials to access the dashboard and explore the reporting features.
+```sh
+npm run dev
+```
 
-Contribution:
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+### Compile and Minify for Production
 
-License:
-This project is licensed under the MIT License.
+```sh
+npm run build
+```
 
+### Lint with [ESLint](https://eslint.org/)
 
+```sh
+npm run lint
+```
