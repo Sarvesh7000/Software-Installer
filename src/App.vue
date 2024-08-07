@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <Header v-if="$route.meta.showHeader" />
-    <router-view />
+    <router-view class="main-container" />
   </div>
 </template>
 
@@ -24,13 +24,4 @@ export default {
 
 <style>
 /* Add any global styles here */
-body {
-  margin: 0;
-}
-
-html,
-body,
-#app {
-  height: 100%;
-}
 </style>
