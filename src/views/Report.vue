@@ -1,22 +1,18 @@
 <template>
-  <div class="min-h-screen bg-gray-100 p-5 font-sans">
+  <div class="p-5">
     <!-- Header -->
-     <div class="main-container">
-      
-       <div class="bg-white p-2 flex justify-between items-center shadow-md mb-5 rounded-lg">
-         <h1 class="text-xl font-bold text-blue-900">Report</h1>
-        </div>
-        
-        <!-- Table -->
-        <div class="overflow-x-auto bg-white shadow-lg rounded-lg mb-5">
-          <DataTable :value="entries" tableStyle="min-width: 50rem" class="w-full">
-            <Column field="code" header="Email"></Column>
-            <Column field="name" header="MAC Address"></Column>
-            <Column field="category" header="SSD Serial No"></Column>
-            <Column field="quantity" header="App Install Count"></Column>
-            <Column field="price" header="App List"></Column>
-            <Column header="Action">
-              <template #body="slotProps">
+    <Title heading="Report"></Title>
+
+    <!-- Table -->
+    <div class="overflow-x-auto bg-white shadow-lg rounded-lg mb-5">
+      <DataTable :value="entries" tableStyle="min-width: 50rem" class="w-full">
+        <Column field="code" header="Email"></Column>
+        <Column field="name" header="MAC Address"></Column>
+        <Column field="category" header="SSD Serial No"></Column>
+        <Column field="quantity" header="App Install Count"></Column>
+        <Column field="price" header="App List"></Column>
+        <Column header="Action">
+          <template #body="slotProps">
             <Button text raised icon="pi pi-list" @click="toggleDetails(slotProps.data)" />
           </template>
         </Column>
@@ -35,7 +31,6 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -50,9 +45,9 @@ export default {
   },
   created() {
     if (!this.reportType) {
-      this.$router.push({ name: 'Dashboard' });
+      this.$router.push({ name: 'Dashboard' })
     } else {
-      console.log('Report type:', this.reportType);
+      console.log('Report type:', this.reportType)
     }
   },
   data() {
@@ -100,31 +95,22 @@ export default {
         }
       ],
       selectedEntry: null
-    };
+    }
   },
   methods: {
     toggleDetails(data) {
       if (this.selectedEntry && this.selectedEntry.id === data.id) {
-        this.selectedEntry = null;
+        this.selectedEntry = null
       } else {
-        this.selectedEntry = data;
+        this.selectedEntry = data
       }
-      console.log(data);
+      console.log(data)
     }
   }
-};
+}
 </script>
 
 <style scoped>
-body {
-  background-color: #f3f4f6;
-  margin: 0;
-}
-
-header {
-  background-color: white;
-}
-
 .table-container {
   border-radius: 0.5rem;
   box-shadow:
