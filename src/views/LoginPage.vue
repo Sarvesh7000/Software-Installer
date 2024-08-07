@@ -1,6 +1,10 @@
 <template>
-  <div class="bg-gradient-to-r from-teal-400 via-teal-300 to-coral-400 flex items-center justify-center min-h-screen">
-    <form @submit.prevent="handleSubmit" class="max-w-md w-full bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+  <div
+    class="bg-gradient-to-r from-teal-400 via-teal-300 to-coral-400 flex items-center justify-center min-h-screen"
+  >
+    <div
+      class="max-w-md w-full bg-white p-8 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105"
+    >
       <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Login</h2>
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
@@ -27,18 +31,19 @@
           :class="passwordToggleIcon"
           @click="togglePasswordVisibility"
           class="pi absolute right-3 top-9 transform -translate-y-1/2 cursor-pointer text-gray-500"
-          style="font-size: 1.5rem;"
+          style="font-size: 1.5rem"
         ></i>
       </div>
-      <div class="flex items-center justify-between">
-        <button
+      <div class="text-center ">
+        <Button label="Login" raised @click="handleSubmit" />
+        <!-- <button
           type="submit"
           class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300 ease-in-out"
         >
           Login
-        </button>
+        </button> -->
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -62,10 +67,10 @@ export default {
   methods: {
     handleSubmit() {
       if (this.username && this.password) {
-        localStorage.setItem('userToken', 'dummyToken');
-        this.$router.push({ name: 'Dashboard' });
+        localStorage.setItem('userToken', 'dummyToken')
+        this.$router.push({ name: 'Dashboard' })
       } else {
-        alert('Please enter valid credentials');
+        alert('Please enter valid credentials')
       }
     },
     togglePasswordVisibility() {
@@ -76,13 +81,6 @@ export default {
 </script>
 
 <style scoped>
-body, #app {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-}
-
 .min-h-screen {
   height: 100vh;
 }
@@ -100,11 +98,13 @@ body, #app {
 }
 
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, #38B2AC, #81E6D9, #FC8181);
+  background-image: linear-gradient(to right, #38b2ac, #81e6d9, #fc8181);
 }
 
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .transition {
@@ -116,7 +116,7 @@ body, #app {
 }
 
 .focus\:ring-2:focus {
-  ring: 2px solid #38B2AC;
+  ring: 2px solid #38b2ac;
 }
 
 .transform {
