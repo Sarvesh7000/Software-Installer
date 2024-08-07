@@ -1,10 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gray-100 p-5 font-sans">
-    
-    <div class="bg-white p-2 flex justify-between items-center shadow-md mb-5 rounded-lg">
-      <h3 class="text-xl font-bold text-blue-900">Activation Details</h3>
-    </div>
-    
+  <div class="p-5">
+    <!-- Header -->
+    <Title heading="Activation Details"></Title>
+
     <!-- Search Option -->
     <div class="mb-4">
       <input
@@ -15,7 +13,7 @@
       />
       <!-- <i class="pi pi-search text-black"></i> -->
     </div>
-    
+
     <!-- Table -->
     <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
       <DataTable :value="filteredEntries" tableStyle="min-width: 50rem" class="w-full">
@@ -35,30 +33,59 @@ export default {
     return {
       searchQuery: '',
       entries: [
-        { id: '1000', code: '192.108.10.2', name: '198.27.60.5', category: 'dfufud78', quantity: 'sdhjqg@gmail.com' },
-        { id: '1001', code: '192.108.10.1', name: '127.68.86.2', category: 'wgdu7dfg', quantity: 'asdbk@gmail.com' },
-        { id: '1002', code: '192.108.10.6', name: '156.38.27.29', category: 'wdgu6dd', quantity: 'sabdk@gmail.com' },
-        { id: '1003', code: '192.108.10.5', name: '27.25.34.23', category: 'wdvj6dj', quantity: 'ashd@gmail.com' },
-        { id: '1004', code: '192.108.10.4', name: '23.64.13.6', category: 'sdhd7jh', quantity: 'dgsk@gmail.com' },
+        {
+          id: '1000',
+          code: '192.108.10.2',
+          name: '198.27.60.5',
+          category: 'dfufud78',
+          quantity: 'sdhjqg@gmail.com'
+        },
+        {
+          id: '1001',
+          code: '192.108.10.1',
+          name: '127.68.86.2',
+          category: 'wgdu7dfg',
+          quantity: 'asdbk@gmail.com'
+        },
+        {
+          id: '1002',
+          code: '192.108.10.6',
+          name: '156.38.27.29',
+          category: 'wdgu6dd',
+          quantity: 'sabdk@gmail.com'
+        },
+        {
+          id: '1003',
+          code: '192.108.10.5',
+          name: '27.25.34.23',
+          category: 'wdvj6dj',
+          quantity: 'ashd@gmail.com'
+        },
+        {
+          id: '1004',
+          code: '192.108.10.4',
+          name: '23.64.13.6',
+          category: 'sdhd7jh',
+          quantity: 'dgsk@gmail.com'
+        }
       ]
-    };
+    }
   },
   computed: {
     filteredEntries() {
-      return this.entries.filter(entry => {
-        return Object.values(entry).some(value =>
+      return this.entries.filter((entry) => {
+        return Object.values(entry).some((value) =>
           value.toString().toLowerCase().includes(this.searchQuery.toLowerCase())
-        );
-      });
+        )
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped>
 body {
-  
-  background-color: #f3f4f6; 
+  background-color: #f3f4f6;
   margin: 0;
 }
 
@@ -66,15 +93,15 @@ header {
   background-color: white;
 }
 
-input[type="text"] {
-  border: 1px solid #d1d5db; 
+input[type='text'] {
+  border: 1px solid #d1d5db;
 }
 
 .table-container {
-  border-radius: 0.5rem; 
-  box-shadow: 
-  0 4px 6px -1px rgb(0 0 0 / 10%),
-  0 2px 4px -2px rgb(0 0 0 / 10%); 
+  border-radius: 0.5rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 10%),
+    0 2px 4px -2px rgb(0 0 0 / 10%);
 }
 
 .table-container table {
@@ -83,27 +110,28 @@ input[type="text"] {
   border-collapse: collapse;
 }
 
-.table-container th, .table-container td {
+.table-container th,
+.table-container td {
   padding: 1rem;
-  border-bottom: 1px solid #e5e7eb; 
+  border-bottom: 1px solid #e5e7eb;
   text-align: left;
 }
 
 .table-container th {
   background-color: #f9fafb;
   font-weight: bold;
-  color: #4b5563; 
+  color: #4b5563;
 }
 
 .table-container tr:nth-child(even) {
-  background-color: #f3f4f6; 
+  background-color: #f3f4f6;
 }
 
 .table-container tr:hover {
-  background-color: #e2e8f0; 
+  background-color: #e2e8f0;
 }
 
-input[type="text"]::placeholder {
-  color: #9ca3af; 
+input[type='text']::placeholder {
+  color: #9ca3af;
 }
 </style>
