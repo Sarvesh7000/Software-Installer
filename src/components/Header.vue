@@ -3,7 +3,7 @@
     class="sticky top-0 bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-10 font-serif"
   >
     <div class="container mx-auto p-2 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">Software Application</h1>
+      <h1 @click="goToDashboard" class="text-2xl font-bold text-white cursor-pointer hover: to-blue-200 transition-transform transform hover:scale-105 relative ">Software Installer</h1>
       <div class="flex items-center space-x-10 relative">
         <button
           @click="toggleDropdown"
@@ -46,17 +46,17 @@ export default {
       this.$router.push({ name: 'Login' })
 
       this.dropdownOpen = false
+    },
+    goToDashboard() {
+      if (this.$route.name !== 'Dashboard') {
+        this.$router.push({ name: 'Dashboard' })
+      }
     }
   }
 }
 </script>
 
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0%;
-}
-
 header {
   transition: all 0.3s ease;
 }
