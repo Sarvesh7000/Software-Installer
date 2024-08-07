@@ -11,7 +11,7 @@ import Aura from '@primevue/themes/aura'
 
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
-
+import Title from '@/components/Title.vue'
 // Styles
 
 // Icons
@@ -29,6 +29,7 @@ app.use(PrimeVue, {
     }
   }
 })
-app.component('DataTable',DataTable)
-app.component('Column',Column)
+app.component('DataTable', DataTable)
+app.component('Column', Column)
+app.component('Title', Title)
 app.mount('#app')
