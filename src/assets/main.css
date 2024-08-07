@@ -9,12 +9,12 @@
   margin: 0;
   font-weight: normal;
 }
-body{
-  overflow: hidden;
+#app {
+  @apply bg-gray-100;
+  min-height: 100vh;
+  font-family:sans-serif;
 }
-
 .main-container {
-  height: calc(100vh - 15vh);
+  height: calc(100vh -52px);
   overflow-y: auto;
-  
 }
